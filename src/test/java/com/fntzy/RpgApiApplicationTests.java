@@ -1,4 +1,4 @@
-package com.fntzy.RPG.API;
+package com.fntzy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
