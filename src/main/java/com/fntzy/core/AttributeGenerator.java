@@ -1,14 +1,12 @@
 package com.fntzy.core;
 
 import com.fntzy.core.model.Discipline;
-import com.fntzy.core.model.AttributeName;
+import com.fntzy.core.model.enums.AttributeName;
 
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-import static com.fntzy.core.model.RankAttributeMaps.primaryRankToAttributeMap;
-import static com.fntzy.core.model.RankAttributeMaps.secondaryRankToAttributeMap;
-import static com.fntzy.core.model.RankAttributeMaps.tertiaryRankToAttributeMap;
+import static com.fntzy.core.model.maps.RankAttributeMaps.*;
 
 public class AttributeGenerator {
 

@@ -13,5 +13,6 @@ public class Attributes {
     private Attribute intellect;
     private Attribute sociability;
     private Attribute perception;
+    private Attribute spirit;
 
 }

@@ -1,6 +1,5 @@
-package com.fntzy.profile;
+package com.fntzy.template;
 
-import com.fntzy.core.model.Discipline;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,7 +8,6 @@ import java.util.List;
 @Data
 @Builder
 public class CreatureTemplate {
-
     private String name;
-    private List<Discipline> disciplines;
+    private List<DisciplineTemplate> disciplineTemplates;
 }

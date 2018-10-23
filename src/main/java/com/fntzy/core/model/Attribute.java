@@ -1,5 +1,6 @@
 package com.fntzy.core.model;
 
+import com.fntzy.core.model.enums.AttributeName;
 import lombok.Builder;
 import lombok.Data;
 

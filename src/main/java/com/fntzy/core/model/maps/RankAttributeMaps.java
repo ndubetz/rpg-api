@@ -1,4 +1,4 @@
-package com.fntzy.core.model;
+package com.fntzy.core.model.maps;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +52,5 @@ public class RankAttributeMaps {
     public static Map<Integer, Integer> tertiaryRankToAttributeMap() {
         return tertiaryRankToAttributeMap;
     }
-
 
 }

@@ -1,14 +1,12 @@
-package com.fntzy.profile;
+package com.fntzy.core.model;
 
-import com.fntzy.core.AttributeGenerator;
-import com.fntzy.core.model.Attribute;
-import com.fntzy.core.model.AttributeName;
-import com.fntzy.core.model.Attributes;
-import com.fntzy.core.model.Discipline;
+import com.fntzy.core.model.enums.AttributeName;
+import com.fntzy.template.CreatureTemplate;
 import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.fntzy.core.AttributeGenerator.generateStatScore;
 
@@ -21,7 +19,10 @@ public class Creature {
     private Attributes attributes;
 
     public static Creature fromTemplate(CreatureTemplate creatureTemplate) {
-        List<Discipline> disciplines = creatureTemplate.getDisciplines();
+        List<Discipline> disciplines = creatureTemplate.getDisciplineTemplates()
+                .stream()
+                .map(Discipline::fromTemplate)
+                .collect(Collectors.toList());
         return Creature.builder()
                 .name(creatureTemplate.getName())
                 .disciplines(disciplines)
@@ -49,6 +50,10 @@ public class Creature {
                         .sociability(Attribute.builder()
                                 .name(AttributeName.SOCIABILITY)
                                 .score(generateStatScore(AttributeName.SOCIABILITY, disciplines))
+                                .build())
+                        .spirit(Attribute.builder()
+                                .name(AttributeName.SPIRIT)
+                                .score(generateStatScore(AttributeName.SPIRIT, disciplines))
                                 .build())
                         .build())
                 .build();
